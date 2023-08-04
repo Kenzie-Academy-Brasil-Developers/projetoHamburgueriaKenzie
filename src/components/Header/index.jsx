@@ -1,33 +1,34 @@
 import { useState } from "react";
 import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
-
-export const Header = ({setSearch, search}) => {
-   // const [value, setValue] = useState("");
+import styles from "./style.module.scss"
+export const Header = ({setSearch, cartList}) => {
+   const [value, setValue] = useState("");
    const submit = (e) => {
       e.preventDefault()
          setSearch(value)
+         setValue("")
    }
-   //    setValue("")
    // }
 
    return (
-      <header>
+      <header className={styles.headerContainer}>
          <img src={Logo} alt="Logo Kenzie Burguer" />
          <div>
-            <button>
+            <button className={styles.buttonCar}>
                 <MdShoppingCart size={21} />
-                <span>0</span>
+                <span className={styles.spans}>{cartList.length}</span>
             </button>
             <form onSubmit={submit}>
                <input
+                  placeholder="Digitar pesquisa"
                   type="text"
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
+                  value={value}
+                  onChange={(e) => setValue(e.target.value)}
                   required
                />
-               <button type="submit">
-                 <MdSearch size={21} />
+               <button className={styles.search} type="submit">
+                 <MdSearch size={21}  />
                </button>
             </form>
          </div>

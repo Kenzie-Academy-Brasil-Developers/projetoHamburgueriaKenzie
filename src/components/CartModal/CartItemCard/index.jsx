@@ -5,7 +5,7 @@ export const CartItemCard = ({ product, deleteItem }) => {
       <li>
          <div>
             <img src={product.img} alt={product.name} />
-            <h3>{product.name}</h3>
+            <h3 className="typography nameProducts ">{product.name}</h3>
          </div>
          <button onClick={() => deleteItem(product.id)} aria-label="delete" title="Remover item">
             <MdDelete size={21} />

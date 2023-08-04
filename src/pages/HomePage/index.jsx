@@ -4,16 +4,15 @@ import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
 import { api } from "../../services/api";
 import { toast } from "react-toastify";
-
+import styles from "./style.module.scss"
 
 
 
 export const HomePage = () => {
    const [productList, setProductList] = useState([]);
-   const [cartList, setCartList] = useState([]);
    const LocalStorageCar = localStorage.getItem("@PRODUCTSCAR")
-   const [search, setSearch] = useState(LocalStorageCar ? JSON.parse(LocalStorageCar) : [])
-
+   const [cartList, setCartList] = useState(LocalStorageCar ? JSON.parse(LocalStorageCar) : []);
+   const [search, setSearch] = useState("")
 
    useEffect(() => {
        localStorage.setItem("@PRODUCTSCAR",  JSON.stringify(cartList))
@@ -40,19 +39,19 @@ export const HomePage = () => {
 
    const deleteAllItens = () => {
       setCartList([])
+
       toast.warn("Todos os produtos foram excluídos do carrinho")
    }
 
-    const productsSearch = productList.filter(product => product.name.toLowerCase().includes(search.toLowerCase()) || (product => product.category.toLowerCase().includes(search.toLowerCase())))
+   const productsSearch = productList.filter(product => product.name.toLowerCase().includes(search.toLowerCase().trim()) || (product.category.toLowerCase().includes(search.toLowerCase().trim())))
 
-     const listSearch = search ? productsSearch : productList;
-  
+   const listSearch = search ? productsSearch : productList;
 
-     
+   
 
    useEffect(() => {
       const getProducts = async () => {
-         const {data} = await api.get(`products/${search}`)
+         const {data} = await api.get(`products`)
          setProductList(data)
       }
       getProducts()
@@ -62,9 +61,9 @@ export const HomePage = () => {
 
    return (
       <>
-         <Header setSearch={setSearch} search={search} />
+         <Header cartList={cartList} setSearch={setSearch} />
          <main>
-            <ProductList addItem={addItem} productsSearch={productsSearch} />
+            <ProductList  addItem={addItem} productsSearch={listSearch} />
             <CartModal cartList={cartList} deleteItem={deleteItem} listSearch={listSearch} deleteAllItens={deleteAllItens} />
          </main>
       </>
