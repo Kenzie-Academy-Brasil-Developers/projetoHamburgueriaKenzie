@@ -13,6 +13,8 @@ export const HomePage = () => {
    const LocalStorageCar = localStorage.getItem("@PRODUCTSCAR")
    const [cartList, setCartList] = useState(LocalStorageCar ? JSON.parse(LocalStorageCar) : []);
    const [search, setSearch] = useState("")
+   const [isOpen, setIsOpen] = useState(false)
+
 
    useEffect(() => {
        localStorage.setItem("@PRODUCTSCAR",  JSON.stringify(cartList))
@@ -61,10 +63,10 @@ export const HomePage = () => {
 
    return (
       <>
-         <Header cartList={cartList} setSearch={setSearch} />
+         <Header setIsOpen={setIsOpen} cartList={cartList} setSearch={setSearch} />
          <main>
             <ProductList  addItem={addItem} productsSearch={listSearch} />
-            <CartModal cartList={cartList} deleteItem={deleteItem} listSearch={listSearch} deleteAllItens={deleteAllItens} />
+            {isOpen ? <CartModal cartList={cartList} deleteItem={deleteItem} listSearch={listSearch} deleteAllItens={deleteAllItens} setIsOpen={setIsOpen} /> : null}
          </main>
       </>
    );
