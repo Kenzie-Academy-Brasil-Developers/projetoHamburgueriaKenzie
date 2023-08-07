@@ -14,12 +14,12 @@ export const HomePage = () => {
    const [cartList, setCartList] = useState(LocalStorageCar ? JSON.parse(LocalStorageCar) : []);
    const [search, setSearch] = useState("")
    const [isOpen, setIsOpen] = useState(false)
-
+   
+  
 
    useEffect(() => {
        localStorage.setItem("@PRODUCTSCAR",  JSON.stringify(cartList))
      }, [cartList])
-
 
 
    const addItem = (addProduct) => {
@@ -27,7 +27,8 @@ export const HomePage = () => {
          setCartList([...cartList, addProduct])
          toast.success("Produto adicionado no carrinho")
       } else {
-         toast.error("Esse produto já foi adicionado")
+         
+         toast.warn("Esse produto já foi adicionado")
       }
       
    }
@@ -66,15 +67,9 @@ export const HomePage = () => {
          <Header setIsOpen={setIsOpen} cartList={cartList} setSearch={setSearch} />
          <main>
             <ProductList  addItem={addItem} productsSearch={listSearch} />
-            {isOpen ? <CartModal cartList={cartList} deleteItem={deleteItem} listSearch={listSearch} deleteAllItens={deleteAllItens} setIsOpen={setIsOpen} /> : null}
+            {isOpen ? <CartModal  cartList={cartList} deleteItem={deleteItem} listSearch={listSearch} deleteAllItens={deleteAllItens} setIsOpen={setIsOpen} /> : null}
          </main>
       </>
    );
 };
 
-// useEffect montagem - carrega os produtos da API e joga em productList
-   // useEffect atualização - salva os produtos no localStorage (carregar no estado)
-   // adição, exclusão, e exclusão geral do carrinho
-   // renderizações condições e o estado para exibir ou não o carrinho
-   // filtro de busca
-   // estilizar tudo com sass de forma responsiva

@@ -1,7 +1,8 @@
 import { MdClose } from "react-icons/md";
 import { CartItemCard } from "./CartItemCard";
-import styles from "./style.module.scss"
-export const CartModal = ({ cartList, listSearch, deleteItem, deleteAllItens, setIsOpen}) => {
+import styles from "./style.module.scss";
+
+export const CartModal = ({ cartList,addProduct, listSearch, deleteItem, deleteAllItens, setIsOpen}) => {
    
 
    const total = cartList.reduce((prevValue, product) => {
@@ -10,16 +11,16 @@ export const CartModal = ({ cartList, listSearch, deleteItem, deleteAllItens, se
    return (
       <div className={styles.modalOpen} role="dialog">
          <div className={styles.modalBox}>
-            <div>
+            <div className={styles.headerCar}>
                <h2 className="typography titleCar">Carrinho de compras</h2>
                <button onClick={() => setIsOpen(false)} aria-label="close" title="Fechar">
                   <MdClose size={21} />
                </button>
             </div>
             <div>
-               <ul>
+               <ul className={styles.ulCar}>
                   {cartList.map((product) => (
-                     <CartItemCard key={product.id} product={product} deleteItem={deleteItem} />
+                     <CartItemCard key={product.id}   product={product} addProduct={addProduct} deleteItem={deleteItem} />
                   ))}
                </ul>
             </div>
