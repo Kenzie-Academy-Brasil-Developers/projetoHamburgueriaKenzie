@@ -17,8 +17,10 @@ export const Header = ({setSearch, cartList, setIsOpen}) => {
 
    return (
       <header className={styles.headerContainer}>
-         <img src={Logo} alt="Logo Kenzie Burguer" />
-         <div>
+         <div className={styles.divHeaderLogo}>
+            <img src={Logo} alt="Logo Kenzie Burguer" />
+         </div>
+         <div className={styles.divContent}>
             <button className={styles.buttonCar} onClick={() => setIsOpen(true)}>
                 <MdShoppingCart size={21} />
                 <span className={styles.spans}>{cartList.length}</span>

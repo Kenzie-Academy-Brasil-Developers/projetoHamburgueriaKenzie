@@ -7,9 +7,9 @@
     flex-direction: row;
     align-items: center;
     border-radius: 5px;
-    border: 1px solid var(--grey-0, #F5F5F5);
-    background: #FFF;
     flex-wrap: nowrap;
+    justify-content: space-between;
+
 }
 
 .imgCar{
@@ -17,12 +17,22 @@
     
 }
 .divImgCar{
+    display: flex;
+    align-items: center;
     width: 82px;
     height: 80px;
     background-color: var(--grey-100);
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
 }
 
 
-.cardCar{
+.cardsCar{
     display: flex;
+    gap: 20px;
+}
+
+.divContentInfo{
+    
 }

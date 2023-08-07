@@ -25,7 +25,10 @@ export const CartItemCard = ({ product,  deleteItem }) => {
                <div className={styles.divImgCar}>
                <img className={styles.imgCar} src={product.img} alt={product.name} />
                </div>
-               <h3 className="typography nameProducts ">{product.name}</h3>
+               <div className={styles.divContentInfo}>
+                  <h3 className="typography nameProducts ">{product.name}</h3>
+                  <p>{product.price.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</p>
+               </div>
             {/* <button onClick={add}>
                <MdAdd size={21} />
             </button>

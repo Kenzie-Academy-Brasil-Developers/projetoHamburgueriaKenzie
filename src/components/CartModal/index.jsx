@@ -11,25 +11,29 @@ export const CartModal = ({ cartList,addProduct, listSearch, deleteItem, deleteA
    return (
       <div className={styles.modalOpen} role="dialog">
          <div className={styles.modalBox}>
-            <div className={styles.headerCar}>
-               <h2 className="typography titleCar">Carrinho de compras</h2>
-               <button onClick={() => setIsOpen(false)} aria-label="close" title="Fechar">
-                  <MdClose size={21} />
-               </button>
-            </div>
-            <div>
-               <ul className={styles.ulCar}>
-                  {cartList.map((product) => (
-                     <CartItemCard key={product.id}   product={product} addProduct={addProduct} deleteItem={deleteItem} />
-                  ))}
-               </ul>
-            </div>
-            <div>
-               <div>
-                  <span className="typography totalValueCar ">Total</span>
-                  <span>{total.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
+               <div className={styles.headerCar}>
+                  <h2 className="typography titleCar">Carrinho de compras</h2>
+                  <button className={styles.buttonClose} onClick={() => setIsOpen(false)} aria-label="close" title="Fechar">
+                     <MdClose size={21} />
+                  </button>
                </div>
-               <button onClick={() => deleteAllItens()}>Remover todos</button>
+            <div>
+               <div className={styles.divUlProducts}>
+                  <ul className={styles.ulCar}>
+                     {cartList.map((product) => (
+                        <CartItemCard key={product.id}   product={product} addProduct={addProduct} deleteItem={deleteItem} />
+                     ))}
+                  </ul>
+               </div>
+               <div className={styles.divCarButtonResult}>
+                  <div className={styles.divResult}>
+                     <span className="typography totalValueCar ">Total</span>
+                     <span className="typography totalValue">{total.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
+                  </div>
+                  <div className={styles.divButton}>
+                     <button className="buttons default" onClick={() => deleteAllItens()}>Remover todos</button>
+                  </div>
+               </div>
             </div>
          </div>
       </div>
