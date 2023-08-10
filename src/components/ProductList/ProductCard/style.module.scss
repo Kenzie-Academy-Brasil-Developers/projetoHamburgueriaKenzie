@@ -1,7 +1,8 @@
 
 .card{
     display: flex;
-    width: 16.75rem;
+    width: 100%;
+    max-width: 16.75rem;
     height: 346px;
     flex-direction: column;
     justify-content: center;
@@ -10,7 +11,6 @@
     padding: 20px;
     gap: 10px;
     border-radius: 3px solid var(--color-300);
-
     
     img{
         width: 9.3rem;
@@ -21,13 +21,20 @@
         height: 196px;
     }
     
+    @media(max-width: 280px){
+        .divImg{
+            width: 100%;
+            width: 217.8px
+        }
+    }
+   
 }
-
 .card:hover{
     border: 2px solid var(--color-primary)
 }
 .divImg{
-    width: 16.3rem;
+    width: 100%;
+    width: 260.8px;
     height: 175px;
     background: var(--grey-0, #F5F5F5);
     margin-left: -19px;

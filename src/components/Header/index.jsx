@@ -17,26 +17,32 @@ export const Header = ({setSearch, cartList, setIsOpen}) => {
 
    return (
       <header className={styles.headerContainer}>
-         <div className={styles.divHeaderLogo}>
-            <img src={Logo} alt="Logo Kenzie Burguer" />
-         </div>
-         <div className={styles.divContent}>
-            <button className={styles.buttonCar} onClick={() => setIsOpen(true)}>
-                <MdShoppingCart size={21} />
-                <span className={styles.spans}>{cartList.length}</span>
-            </button>
-            <form onSubmit={submit}>
-               <input
-                  placeholder="Digitar pesquisa"
-                  type="text"
-                  value={value}
-                  onChange={(e) => setValue(e.target.value)}
-                  required
-               />
-               <button className={styles.search} type="submit">
-                 <MdSearch size={21}  />
-               </button>
-            </form>
+         <div className={styles.divContentHeader}>
+               <div className={styles.divContentLogoButton}>
+                  <div className={styles.divHeaderLogo}>
+                     <img src={Logo} alt="Logo Kenzie Burguer" />
+                  </div>
+                  <div className={styles.divContent}>
+                     <button className={styles.buttonCar} onClick={() => setIsOpen(true)}>
+                        <MdShoppingCart size={21} />
+                        <span className={styles.spans}>{cartList.length}</span>
+                     </button>
+                  </div>
+               </div>
+               <form className={styles.forms} onSubmit={submit}>
+                  <div className={styles.divInput}>
+                     <input
+                        placeholder="Digitar pesquisa"
+                        type="text"
+                        value={value}
+                        onChange={(e) => setValue(e.target.value)}
+                        required
+                     />
+                        <button className={styles.search} type="submit">
+                        <MdSearch size={21}  />
+                        </button>
+                  </div>
+               </form>
          </div>
       </header>
    );

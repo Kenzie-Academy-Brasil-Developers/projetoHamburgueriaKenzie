@@ -65,7 +65,7 @@ export const HomePage = () => {
    return (
       <>
          <Header setIsOpen={setIsOpen} cartList={cartList} setSearch={setSearch} />
-         <main>
+         <main className={styles.main}>
             <ProductList  addItem={addItem} productsSearch={listSearch} />
             {isOpen ? <CartModal  cartList={cartList} deleteItem={deleteItem} listSearch={listSearch} deleteAllItens={deleteAllItens} setIsOpen={setIsOpen} /> : null}
          </main>

@@ -1,112 +1,141 @@
-header{
-    width: 100%;
-    max-height: 80px;
+$breakpoint-mobile: 770px;
+$breakpoint-desktop: 1600px;
+
+.headerContainer{
     background: var(--grey-0);
+    max-width: 1600px;
+    height: 13vh;
     display: flex;
-    justify-content: space-around;
-    padding: 15px;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    img{
-        max-width: 150px;
-        height: 80px;
-    }
-    div{
-        gap: 10px;
+    .divContentHeader{
+        width: 80%;
+        margin: 0 auto;
         display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        gap: 30px;
     }
-    form{
-        width: 100%;
-        max-width: 335px;
-        height: 60px;
-    }
+        .divHeaderLogo{
+            width: 100%;
+            max-width: 150px;
+        }
 
-    input{
-        width: 335px;
-        height: 60px;
-        padding: 0px 10px 0px 15px;
-        border-radius: 8px;
-        border: 2px solid var(--grey-100, #E0E0E0);
-        background: #FFF;
-        &::placeholder{
-            color: var(--grey-100);
-            font-family:  'Inter', sans-serif;
-            font-size: 16px;
-            font-weight: 400;
+        .divContentLogoButton{
+            display: flex;
+            width: 93%;
+            justify-content: space-between;
         }
-        &:hover{
-            border: 2px solid var(--grey-600);
+
+        
+        // @media(max-width: 375px){
+        //     height: 23vh;
+        // }
+        // @media(max-width: 414px){
+        //     .divContentHeader{
+        //         width: 97%;
+        //         padding: 37px;
+        //     }
+        // }
+        
+        @media(max-width: $breakpoint-mobile){
+            height: 20vh;
+            .divContentHeader{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
         }
-    }
-   
+        // @media(max-width:768px){
+        //     .divContentHeader{
+        //         width: 54%;
+        //         padding: 45px;
+        //     }
+        // }
     
+        // @media(max-width: 540px){
+        //     .divContentHeader{
+        //         width: 83%;
+        //         padding: 37px;
+        //         gap: 6px;
+        //     }
+        // }
+        // @media(max-width: 280px){
+        //     .divContentHeader{
+        //         width: 101%;
+        //         padding: 25px;
+        //         gap: 15px;
+        //     }
+        // }
+        // @media(max-width: 540px){
+        //     .divContentHeader{
+        //         width: 77%;
+        //         padding: 20px;
+        //         gap: 6px;
+        //     }
+        // }
+        @media(max-width: 770px){
+            .divContentHeader{
+                width: 101%;
+                padding: 18px;
+                gap: 2px
+            }
+        }
 }
 
-.search{
-    color: var(--grey-0);
-    display: flex;
-    height: 40px;
-    padding: 0px 20px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 8px;
-    border: 2px solid #27AE60;
-    background: #27AE60;
-    top: -50px;
-    left: 261px;
-    position: relative;
-}
 .buttonCar{
-    margin-top: 22px;
-    margin-right: 18px;
+        max-width: 25px;
+        height: 25px;
+        color: var(--color-button);
 }
 .spans{
-    border-radius: 7px;
-    background: var(--color-primary);
-    position: relative;
-    bottom: 33px;
-    right: -10px;
-    width: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-}
-
-.inputSearch{
+            border-radius: 7px;
+            background: var(--color-primary);
+            position: relative;
+            bottom: 33px;
+            right: -10px;
+            width: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+.forms{
     width: 100%;
     max-width: 365px;
-    height: 60px;
-    border-radius: 8px;
-    border: 2px solid var(--grey-100);
-    background: #FFF;
-}
-.inputSearch::placeholder{
-    color: var(--grey-100);
-    font-family: 'Inter', sans-serif;;
-    font-size: 16px;
-    font-weight: 400;
-}
-
-
-@media(max-width: 650px) {
-    .headerContainer{
-        max-height: 211px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .divContent{
-        gap: 10px;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-    .buttonCar{
-        position: relative;
-        bottom: 70px;
-        right: 45px;
-        }
+    justify-content: flex-end;
+}
+.divInput{
+    height: 60px;
+    width: 100%;
+    max-width: 365px;
+    display: flex;
+    border-radius: 8px;
+    border: 2px solid var(--grey-100, #E0E0E0);
+    background: #FFF;
+    padding: 10px;
+    align-items: center;
+    &::placeholder{
+        color: var(--grey-100);
+        font-family:  'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    &:hover{
+        border: 2px solid var(--grey-600);
+    }
+    .search{
+        color: var(--grey-0);
+                height: 41px;
+                padding: 0px 8px;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                border-radius: 8px;
+                border: 2px solid #27AE60;
+                background: #27AE60;
+               
     }
 }
