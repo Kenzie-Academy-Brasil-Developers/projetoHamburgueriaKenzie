@@ -3,7 +3,6 @@ import { CartItemCard } from "./CartItemCard";
 import styles from "./style.module.scss";
 
 export const CartModal = ({ cartList,addProduct, listSearch, deleteItem, deleteAllItens, setIsOpen}) => {
-   console.log(cartList)
 
    const total = cartList.reduce((prevValue, product) => {
       return prevValue + product.price;
@@ -11,7 +10,6 @@ export const CartModal = ({ cartList,addProduct, listSearch, deleteItem, deleteA
    return (
       <div className={styles.modalOpen} role="dialog">
          <div className={styles.modalBox}>
-           
             <div className={styles.headerCar}>
                   <h2 className="typography titleCar">Carrinho de compras</h2>
                   <button className={styles.buttonClose} onClick={() => setIsOpen(false)} aria-label="close" title="Fechar">
@@ -42,7 +40,6 @@ export const CartModal = ({ cartList,addProduct, listSearch, deleteItem, deleteA
                   </div>
             </div>
             )}
-            
          </div>
       </div>
    );

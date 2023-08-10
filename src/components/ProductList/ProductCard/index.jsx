@@ -1,4 +1,4 @@
-import styles from "./style.module.scss"
+import styles from "./style.module.scss";
 
 export const ProductCard = ({ product, addItem }) => {
     return(
@@ -14,4 +14,4 @@ export const ProductCard = ({ product, addItem }) => {
             </div>
         </li>
     )
-}
+};

@@ -1,34 +1,22 @@
 .sectionCards{
     width: 100%;
-    max-width: 1600px;
     margin: 0 auto;
     .divSection{
         width: 80%;
         margin: 0 auto;
-        
-        
 }
 }
-// @media(max-width: 650px){
-//     .ulCard{
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
-//         flex-direction: row;
-//         flex-wrap: wrap;
-//     }
-// }
 .ulCard{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin-top: 20px;
-    overflow-y: auto;
+    gap: 10px;
         @media(max-width: 1115px){
                 display: flex;
                 overflow-y: auto;
                 flex-direction: row;
                 flex-wrap: nowrap;
-                gap: 10px;
+                gap: 20px;
         }
     .divUlCard{
         width: 80%;

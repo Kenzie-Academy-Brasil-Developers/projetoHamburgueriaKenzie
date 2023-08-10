@@ -4,22 +4,22 @@ import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
 import { api } from "../../services/api";
 import { toast } from "react-toastify";
-import styles from "./style.module.scss"
+import styles from "./style.module.scss";
 
 
 
 export const HomePage = () => {
    const [productList, setProductList] = useState([]);
-   const LocalStorageCar = localStorage.getItem("@PRODUCTSCAR")
+   const LocalStorageCar = localStorage.getItem("@PRODUCTSCAR");
    const [cartList, setCartList] = useState(LocalStorageCar ? JSON.parse(LocalStorageCar) : []);
-   const [search, setSearch] = useState("")
-   const [isOpen, setIsOpen] = useState(false)
+   const [search, setSearch] = useState("");
+   const [isOpen, setIsOpen] = useState(false);
    
   
 
    useEffect(() => {
        localStorage.setItem("@PRODUCTSCAR",  JSON.stringify(cartList))
-     }, [cartList])
+     }, [cartList]);
 
 
    const addItem = (addProduct) => {
@@ -31,20 +31,19 @@ export const HomePage = () => {
          toast.warn("Esse produto já foi adicionado")
       }
       
-   }
+   };
 
 
    const deleteItem = (removeItem) => {
       const newProductsCard = cartList.filter(product => product.id !== removeItem)
       setCartList(newProductsCard)
       toast.warn("Produto excluído do carrinho")
-   }
+   };
 
    const deleteAllItens = () => {
-      setCartList([])
-
+      setCartList([]);
       toast.warn("Todos os produtos foram excluídos do carrinho")
-   }
+   };
 
    const productsSearch = productList.filter(product => product.name.toLowerCase().includes(search.toLowerCase().trim()) || (product.category.toLowerCase().includes(search.toLowerCase().trim())))
 
@@ -56,8 +55,8 @@ export const HomePage = () => {
       const getProducts = async () => {
          const {data} = await api.get(`products`)
          setProductList(data)
-      }
-      getProducts()
+      };
+      getProducts();
    }, [])
    
   

@@ -12,6 +12,7 @@
 }
 .buttonClose{
     max-width: 13px;
+    color: #ffffffb4;
 }
 .modalBox{
     border-radius: 5px;
@@ -42,6 +43,7 @@
     display: flex;
     flex-direction: column;
     gap: 18px;
+    padding: 10px;
     overflow-y: auto;
 }
 

@@ -1,7 +1,7 @@
 import { ProductCard } from "./ProductCard";
-import styles from "./style.module.scss"
+import styles from "./style.module.scss";
+
 export const ProductList = ({ productsSearch,addItem }) => {
-   console.log(productsSearch)
    return (
       <section className={styles.sectionCards}>
          <div className={styles.divSection}>
@@ -15,10 +15,8 @@ export const ProductList = ({ productsSearch,addItem }) => {
                         <ProductCard key={product.id} product={product}  addItem={addItem} />
                      ))}
                </ul>
-            )}
-               
+            )};
             </div>
-         
       </section>
       
    );
