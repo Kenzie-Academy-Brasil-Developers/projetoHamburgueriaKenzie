@@ -6,6 +6,10 @@
         font-weight: 700;
         line-height: 24px; 
     }
+    &.messageSearch{
+        font-size: 1.875rem;
+        color: var(--color-primary);
+    }
     &.categoryName{
         color: var(--grey-300);
         font-size: 0.75rem;

@@ -30,8 +30,16 @@
                 flex-wrap: nowrap;
                 gap: 10px;
         }
-.divUlCard{
-    width: 80%;
-    margin: 0 auto;
+    .divUlCard{
+        width: 80%;
+        margin: 0 auto;
+    }
 }
+.divMessageSearch{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    height: 245px;
+    align-items: center;
+    justify-content: center;
 }

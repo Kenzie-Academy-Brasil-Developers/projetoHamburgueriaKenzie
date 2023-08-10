@@ -27,17 +27,6 @@ $breakpoint-desktop: 1600px;
             width: 93%;
             justify-content: space-between;
         }
-
-        
-        // @media(max-width: 375px){
-        //     height: 23vh;
-        // }
-        // @media(max-width: 414px){
-        //     .divContentHeader{
-        //         width: 97%;
-        //         padding: 37px;
-        //     }
-        // }
         
         @media(max-width: $breakpoint-mobile){
             height: 20vh;
@@ -47,34 +36,7 @@ $breakpoint-desktop: 1600px;
                 align-items: center;
             }
         }
-        // @media(max-width:768px){
-        //     .divContentHeader{
-        //         width: 54%;
-        //         padding: 45px;
-        //     }
-        // }
-    
-        // @media(max-width: 540px){
-        //     .divContentHeader{
-        //         width: 83%;
-        //         padding: 37px;
-        //         gap: 6px;
-        //     }
-        // }
-        // @media(max-width: 280px){
-        //     .divContentHeader{
-        //         width: 101%;
-        //         padding: 25px;
-        //         gap: 15px;
-        //     }
-        // }
-        // @media(max-width: 540px){
-        //     .divContentHeader{
-        //         width: 77%;
-        //         padding: 20px;
-        //         gap: 6px;
-        //     }
-        // }
+       
         @media(max-width: 770px){
             .divContentHeader{
                 width: 101%;
@@ -117,12 +79,6 @@ $breakpoint-desktop: 1600px;
     background: #FFF;
     padding: 10px;
     align-items: center;
-    &::placeholder{
-        color: var(--grey-100);
-        font-family:  'Inter', sans-serif;
-        font-size: 16px;
-        font-weight: 400;
-    }
     &:hover{
         border: 2px solid var(--grey-600);
     }
@@ -138,4 +94,10 @@ $breakpoint-desktop: 1600px;
                 background: #27AE60;
                
     }
+}
+input::placeholder{
+    color: var(--grey-100);
+        font-family:  'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
 }
